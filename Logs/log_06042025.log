@@ -1,0 +1,67 @@
+[06042025 19:44:21] [INFO] [main:284] ==== Iniciando processo de cotação ====
+[06042025 19:44:25] [INFO] [fechar_popup:80] Pop-up fechado com sucesso.
+[06042025 19:44:25] [INFO] [trocar_data:261] Trocando a data para: 01/04/2025
+[06042025 19:44:25] [INFO] [trocar_data:274] Data alterada com sucesso.
+[06042025 19:44:27] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:44:27] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Real (BRL)
+[06042025 19:44:27] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: BRL
+[06042025 19:44:28] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Euro (EUR)
+[06042025 19:44:29] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:44:30] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:44:31] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:44:31] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Real (BRL)
+[06042025 19:44:31] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: BRL
+[06042025 19:44:32] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Peso argentino (ARS)
+[06042025 19:44:33] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:44:35] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:44:36] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:44:36] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Real (BRL)
+[06042025 19:44:36] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: BRL
+[06042025 19:44:37] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Iene (JPY)
+[06042025 19:44:38] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:44:40] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:44:41] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:44:41] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Real (BRL)
+[06042025 19:44:41] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: BRL
+[06042025 19:44:42] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Franco suíço (CHF)
+[06042025 19:44:43] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:44:44] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:44:45] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:44:45] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Real (BRL)
+[06042025 19:44:45] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: BRL
+[06042025 19:44:46] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Dólar dos Estados Unidos (USD)
+[06042025 19:44:47] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:44:48] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:44:49] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:44:49] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Real (BRL)
+[06042025 19:44:49] [INFO] [selecionar_moeda_entrada:218] Moeda diferente. Clicando no botão para trocar...
+[06042025 19:44:50] [INFO] [selecionar_moeda_entrada:237] Moeda de entrada selecionada: Dólar dos Estados Unidos (USD)
+[06042025 19:44:53] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Real (BRL)
+[06042025 19:44:54] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:44:55] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:44:56] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:44:56] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Dólar dos Estados Unidos (USD)
+[06042025 19:44:56] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: USD
+[06042025 19:44:57] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Euro (EUR)
+[06042025 19:44:58] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:44:59] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:45:00] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:45:00] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Dólar dos Estados Unidos (USD)
+[06042025 19:45:00] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: USD
+[06042025 19:45:01] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Peso argentino (ARS)
+[06042025 19:45:03] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:45:04] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:45:05] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:45:05] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Dólar dos Estados Unidos (USD)
+[06042025 19:45:05] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: USD
+[06042025 19:45:06] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Iene (JPY)
+[06042025 19:45:07] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:45:08] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:45:09] [INFO] [selecionar_moeda_entrada:203] Verificando moeda atual de entrada...
+[06042025 19:45:09] [INFO] [selecionar_moeda_entrada:211] Moeda atual exibida: Dólar dos Estados Unidos (USD)
+[06042025 19:45:09] [INFO] [selecionar_moeda_entrada:215] A moeda de entrada já está correta: USD
+[06042025 19:45:10] [INFO] [selecionar_moeda_saida:103] Moeda de saída selecionada: Franco suíço (CHF)
+[06042025 19:45:11] [INFO] [preencher_valor:122] Valor 1,00 inserido no campo.
+[06042025 19:45:12] [INFO] [clicar_converter:130] Botão 'Converter' clicado.
+[06042025 19:45:13] [INFO] [salvar_resultado:197] Resultado salvo em: C:\Users\Marcelo\Desktop\Teste Técnico-Unimed\resultado_cotacoes.xlsx
+[06042025 19:45:16] [INFO] [main:312] ==== Processo finalizado ====
