@@ -1,4 +1,4 @@
-name: CI Workflow
+name: CI/CD Workflow
 
 on:
   push:
@@ -35,3 +35,11 @@ jobs:
     
     - name: Run script
       run: python cotacao_moedas.py
+
+    - name: Commit arquivo gerado
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add resultado_cotacoes.xlsx
+        git commit -m "CD: resultado_cotacoes.xlsx gerado automaticamente"
+        git push
