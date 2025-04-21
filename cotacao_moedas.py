@@ -65,13 +65,22 @@ def setup_logger(log_dir):
 
     return logger
 
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 def abrir_navegador():
     options = Options()
-    options.add_argument("--incognito")
+    options.add_argument("--headless")  # Opcional, para rodar sem a janela do navegador
+    options.add_argument("--no-sandbox")  # Para evitar problemas em alguns sistemas
+    options.add_argument("--disable-dev-shm-usage")  # Para evitar o erro de falta de memória
+    options.add_argument("user-data-dir=/tmp/chrome-data")  # Diretório exclusivo para os dados do usuário
+    options.add_argument("--incognito")  # Se necessário, mantém o modo incógnito
+
     driver = webdriver.Chrome(options=options)
     driver.get("https://www.bcb.gov.br/conversao")
     driver.maximize_window()
     return driver
+
 
 def fechar_popup(driver, logger):
     try:
