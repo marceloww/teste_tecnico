@@ -256,6 +256,7 @@ def carregar_moedas_do_excel(moedas_path):
         print(f"Erro ao carregar moedas da planilha: {e}")
         return [], []
 
+
 def trocar_data(driver, logger, nova_data):
     try:
         logger.info(f"Trocando a data para: {nova_data}")
@@ -271,45 +272,61 @@ def trocar_data(driver, logger, nova_data):
         titulo = driver.find_element(By.XPATH, '//h1[text()="Conversor de Moedas"]')
         titulo.click()
 
-        logger.info("Data alterada com sucesso.")
         time.sleep(1)
 
-    except Exception as e:
-        logger.error(f"Erro ao trocar a data: {e}")
+        logger.info(f"Data alterada para: {nova_data}")
 
+    except Exception as e:
+        logger.error(f"Erro ao tentar trocar a data para {nova_data}: {e}")
 
 def main():
+    # Carregar configurações e paths
     log_dir, resultado_path, moedas_path = carregar_configuracoes()
-    logger = setup_logger(log_dir)
-    logger.info("==== Iniciando processo de cotação ====")
 
+    # Configurar o logger
+    logger = setup_logger(log_dir)
+
+    # Carregar as moedas de entrada e saída da planilha
+    moedas_entrada, moedas_saida = carregar_moedas_do_excel(moedas_path)
+
+    # Abrir o navegador
     driver = abrir_navegador()
+
+    # Fechar qualquer pop-up
     fechar_popup(driver, logger)
 
-    # Trocar data aqui antes de qualquer conversão
-    nova_data = "01/04/2025"  # <- você pode alterar essa data conforme necessário
-    trocar_data(driver, logger, nova_data)
+    # Iterar sobre todas as moedas e fazer o processamento
+    for moeda_entrada_planilha, moeda_saida_planilha in zip(moedas_entrada, moedas_saida):
+        logger.info(f"Iniciando processamento para a moeda de entrada: {moeda_entrada_planilha} e moeda de saída: {moeda_saida_planilha}")
 
-    moedas_1, moedas_2 = carregar_moedas_do_excel(moedas_path)
+        try:
+            # Trocar a data antes de qualquer outra ação
+            nova_data = datetime.now().strftime("%d/%m/%Y")
+            trocar_data(driver, logger, nova_data)
 
-    resultados = []
+            # Selecionar moeda de entrada
+            selecionar_moeda_entrada(driver, logger, moeda_entrada_planilha)
 
-    if not moedas_1 and not moedas_2:
-        logger.error("Não foram encontradas moedas na planilha.")
-        return
+            # Selecionar moeda de saída
+            selecionar_moeda_saida(driver, moeda_saida_planilha, logger)
 
-    for moeda_saida, moeda_entrada_planilha in zip(moedas_2, moedas_1):
-        selecionar_moeda_entrada(driver, logger, moeda_entrada_planilha)
-        selecionar_moeda_saida(driver, moeda_saida, logger)
-        preencher_valor(driver, logger)
-        clicar_converter(driver, logger)
-        resultado = extrair_resultado(driver, logger, resultado_path, nova_data)
-        resultados.append(resultado)
+            # Preencher valor a ser convertido
+            preencher_valor(driver, logger)
 
-    salvar_resultado(resultados, resultado_path, logger)
+            # Clicar no botão de converter
+            clicar_converter(driver, logger)
 
+            # Extrair o resultado da conversão
+            resultado = extrair_resultado(driver, logger, resultado_path, nova_data)
+
+            # Salvar o resultado
+            salvar_resultado([resultado], resultado_path, logger)
+
+        except Exception as e:
+            logger.error(f"Erro ao processar a conversão para {moeda_entrada_planilha} - {moeda_saida_planilha}: {e}")
+
+    # Fechar o navegador após o processamento
     driver.quit()
-    logger.info("==== Processo finalizado ====")
 
 if __name__ == "__main__":
     main()
