@@ -1,28 +1,37 @@
-name: Python CI
+name: CI Workflow
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout do código
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - name: Configurar Python
-      uses: actions/setup-python@v4
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
+        python-version: '3.x'
 
-    - name: Instalar dependências
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt
 
-    - name: Executar script principal
+    - name: Set environment variables
+      env:
+        MOEDAS_PATH: ${{ github.workspace }}/Input/moedas.xlsx
+        LOG_DIR: ${{ github.workspace }}/Logs
+        RESULTADO_PATH: ${{ github.workspace }}/resultado_cotacoes.xlsx
+      run: |
+        echo "MOEDAS_PATH=$MOEDAS_PATH"
+        echo "LOG_DIR=$LOG_DIR"
+        echo "RESULTADO_PATH=$RESULTADO_PATH"
+    
+    - name: Run script
       run: python cotacao_moedas.py
