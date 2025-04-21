@@ -17,7 +17,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 init(autoreset=True)
 
 def carregar_configuracoes():
-    config_path = r"C:\Users\Marcelo\Desktop\Teste Técnico-Unimed\Config\config.ini"
+    config_path = os.path.join(os.path.dirname(__file__), 'Config', 'config.ini')
     config = configparser.ConfigParser()
     config.read(config_path, encoding="utf-8")
 
